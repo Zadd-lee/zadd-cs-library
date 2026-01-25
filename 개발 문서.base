@@ -1,0 +1,14 @@
+filters:
+  and:
+    - file.folder == "3. Resource/개발 문서"
+    - '!file.name.endsWith(".base")'
+views:
+  - type: table
+    name: Table
+  - type: list
+    name: 미작성
+    filters:
+      and:
+        - note["작성 완료"] != true
+    markers: number
+    indentProperties: false
